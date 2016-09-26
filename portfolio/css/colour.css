@@ -1,0 +1,96 @@
+.header { background: #405972; }
+#banner { background: #405972;  }
+#fotos { background: #fff;    }
+#banner3 { background: #fff;  }
+#portfolio { background: #48dee5; color: #fff  }
+::-moz-selection{ color:#fff; background: #2BA6CB; }
+::selection { color: #fff; background: #2BA6CB; }
+
+/**** BUTTONS ****/
+.btn-primary { background-color: #2BA6CB; border: 0;}
+.btn-primary:hover { background-color: #48dee5;}
+.btn:visited, .btn:focus { color: #fff; }
+
+/**** LINKS ****/
+a { color: #2BA6CB; }
+a:hover { color: #555; }
+
+/***************************************************
+	MENU
+ ***************************************************/
+
+#main_menu  .nav > li > a { color: #bbb; }
+#main_menu .nav > li > a:hover { background: transparent; color: #fff!important; }
+.dropdown-menu > li > a:hover, 
+.dropdown-menu > li > a:focus, 
+.dropdown-submenu:hover > a, 
+.dropdown-submenu:focus > a,
+.nav > li > a:focus { text-decoration: none;  color: #fff; background: transparent!important; }
+.navbar-toggle { color: #2980B9; background-color: #252525; }
+.navbar-toggle:hover { color: #fff; background-color: #2980B9; }
+
+/***************************************************
+	CONTACT
+ ***************************************************/
+
+.required { color: #19C1C3; }
+#ajax-contact-form  input.btn-form:visited, #ajax-contact-form input.btn-form:focus { background:#2BA6CB; }
+
+/***************************************************
+	FOOTER
+ ***************************************************/
+
+#contact { background-color: #34495E;}
+#footer { background: #323A45; color: #999; }
+
+/***************************************************
+	PRICING TABLE
+ ***************************************************/
+
+#pricing-table { background-color: #f4f4f4;}
+
+.panel {
+    border: 1px solid #0ebfd1; 
+    border-radius:0;
+    transition: box-shadow 0.5s;
+}
+
+.panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+
+.panel-footer .btn:hover {
+    border: 1px solid #0ebfd1;
+    background-color: #fff !important;
+    color: #f4511e;
+}
+
+.panel-heading {
+    color: #fff !important;
+    background-color: #0ebfd1 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.panel-footer {
+    background-color: #fff !important;
+}
+
+.panel-footer h3 {
+    font-size: 32px;
+}
+
+.panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+}

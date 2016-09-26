@@ -1,0 +1,49 @@
+.header { background: #fff; }
+#banner { background: #405972;  }
+#banner2 { background: #fc7bbc;  }
+#banner3 { background: #384e66;  }
+#banner4 { background: #314559;  }
+#banner5 { background: #2a3b4d;  }
+#banner6 { background: #233140;  }
+#banner7 { background: #1c2833;  }
+#banner8 { background: #48dee5;  }
+#banner9 { background: #FC7BBC;  }
+::-moz-selection{ color:#fff; background: #2BA6CB; }
+::selection { color: #fff; background: #2BA6CB; }
+
+/**** BUTTONS ****/
+.btn-primary { background-color: #2BA6CB; border: 0;}
+.btn-primary:hover { background-color: #48dee5;}
+.btn:visited, .btn:focus { color: #fff; }
+
+/**** LINKS ****/
+a { color: #2BA6CB; }
+a:hover { color: #555; }
+
+/***************************************************
+	MENU
+ ***************************************************/
+
+#main_menu  .nav > li > a { color: #FC7BBC; }
+#main_menu .nav > li > a:hover { background: transparent; color: #ff4ca6!important; }
+.dropdown-menu > li > a:hover, 
+.dropdown-menu > li > a:focus, 
+.dropdown-submenu:hover > a, 
+.dropdown-submenu:focus > a,
+.nav > li > a:focus { text-decoration: none;  color: #fff; background: transparent!important; }
+.navbar-toggle { color: #48dee5; background-color: #FC7BBC; }
+.navbar-toggle:hover { color: #FC7BBC; background-color: #48dee5; }
+
+/***************************************************
+	CONTACT
+ ***************************************************/
+
+.required { color: #48dee5; }
+#ajax-contact-form  input.btn-form:visited, #ajax-contact-form input.btn-form:focus { background:#48dee5; }
+
+/***************************************************
+	FOOTER
+ ***************************************************/
+
+#contact { background-color: #34495e;}
+#footer { background: #323A45; color: #999; }
