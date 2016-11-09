@@ -42,7 +42,13 @@ $("[data-rel=tooltip]").tooltip();
         $('.go-contact').on('click',function(){
             $('html, body').animate({scrollTop: $("#contact").offset().top}, 2000);
         });
-    });   
+    });
+
+    $(document).ready(function(){
+        $('.go-banner9').on('click',function(){
+            $('html, body').animate({scrollTop: $("#banner9").offset().top}, 1500);
+        });
+    });
     
 /***************************************************
 		BACK TO TOP LINK
