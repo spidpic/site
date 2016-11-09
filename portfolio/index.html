@@ -185,25 +185,29 @@ src="https://www.facebook.com/tr?id=1708019822805724&ev=PageView&noscript=1"
 				<div class="row pad10">
                    
                     <div class="col-sm-12 col-md-7">
-                        <div class="contact_form">  
-                            <div id="note"></div>
+                        <div class="contact_form">
                             <div id="fields">
                                 <form id="ajax-contact-form">
                                     <p class="form_info">nombre <span class="required">*</span></p>
-                                        <input class="col-xs-12 col-sm-12 col-md-12" type="text" name="name" value="" />
+                                        <input class="col-xs-12 col-sm-12 col-md-12" type="text" name="name" value="" required />
                                     <p class="form_info">email <span class="required">*</span></p>
-                                        <input class="col-xs-12 col-sm-12 col-md-12" type="text" name="email" value=""  />
+                                        <input class="col-xs-12 col-sm-12 col-md-12" type="text" name="email" value="" required />
                                     <p class="form_info">tel&eacute;fono <span class="required">*</span></p>
                                         <input class="col-xs-12 col-sm-12 col-md-12" type="text" name="phone" value="" />
                                     <p class="form_info">Tipo de productos <span class="required">*</span></p>
-                                        <input class="col-xs-12 col-sm-12 col-md-12" type="text" name="name" value="" />
+                                        <input class="col-xs-12 col-sm-12 col-md-12" type="text" name="products" value="" />
                                     <p class="form_info">mensaje <span class="required">*</span></p>
-                                        <textarea name="message" id="message" class="col-xs-12 col-sm-12 col-md-12" ></textarea>
+                                        <textarea name="message" id="message" class="col-xs-12 col-sm-12 col-md-12" required ></textarea>
                                         <div class="clear"></div>
 
                                     <input type="submit" class="btn btn-primary btn-form marg-right5" value="enviar" />
                                     <div class="clear pad45"></div>
                                 </form>
+                            </div>
+                            <div class="notification_ok" style="display:none">
+                            <p>
+                                Gracias por elegirnos, ya estamos trabajando en tu propuesta
+                            </p>
                             </div>
                         </div>
                     </div>
@@ -275,31 +279,49 @@ src="https://www.facebook.com/tr?id=1708019822805724&ev=PageView&noscript=1"
 <script src="js/retina.js"></script>
 <!-- Contact -->
 <script type="text/javascript">
-	//<![CDATA[
-		$(document).ready(function(){	
-			$("#ajax-contact-form").submit(function() {
-				var str = $(this).serialize();		
-				$.ajax({
-					type: "POST",
-					url: "contact_form/contact_process.php",
-					data: str,
-					success: function(msg) {
-						// Message Sent - Show the 'Thank You' message and hide the form
-						if(msg == 'OK') {
-							result = '<div class="notification_ok">Gracias por elegirnos, ya estamos trabajando en tu propuesta</div>';
-							$("#fields").hide();
-						} else {
-							result = msg;
-						}
-						$('#note').html(result);
-					}
-				});
-				return false;
-			});															
-		});
-	//]]>		
-</script>
+    $(document).ready(function() {
 
+        $('#ajax-contact-form').on('submit', function(e) {
+        e.preventDefault();
+
+        //get the name field value
+        var name = $('#name').val();
+        //get the name field value
+        var email = $('#email').val();
+        //get the comments
+        var phone = $('#phone').val();
+        //get the comments
+        var products = $('#products').val();
+        //get the comments
+        var message = $('#message').val();
+
+        //pretend we don't need validation
+
+        //send to formspree
+        $.ajax({
+            url:'https://formspree.io/info@spidpic.com',
+            method:'POST',
+            data:{
+            name:name,
+            email:email,
+            phone:phone,
+            products:products,
+            message:message,
+            _subject:'Spidpic Contact Form',
+            },
+            dataType:"json",
+            success:function() {
+            console.log('success'); 
+            $('#ajax-contact-form').hide();
+            $('.notification_ok').show();
+            }   
+
+        });     
+
+        });
+
+    });
+</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
