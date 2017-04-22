@@ -42,6 +42,7 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
         console.log(xhr.status, xhr.statusText)
         console.log(xhr.responseText);
         document.getElementById('ajax-contact-form').style.display = 'none'; // hide form
+        document.getElementById('email-invalid').style.display = 'none';
         document.getElementById('thankyou_message').style.display = 'block';
         return;
     };

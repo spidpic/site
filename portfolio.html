@@ -187,7 +187,7 @@ src="https://www.facebook.com/tr?id=1708019822805724&ev=PageView&noscript=1"
                     <div class="col-sm-12 col-md-7">
                         <div class="contact_form">
                             <div id="fields">
-                                <form id="ajax-contact-form">
+                                <form id="ajax-contact-form" method="POST" action="https://script.google.com/macros/s/AKfycbwFs90GzYpDS4CclOG-FqD0BMr5wmwWaz9YaPZio88bVID3MJv_/exec" >
                                     <p class="form_info">nombre <span class="required">*</span></p>
                                         <input class="col-xs-12 col-sm-12 col-md-12" type="text" name="name" value="" required />
                                     <p class="form_info">email <span class="required">*</span></p>
@@ -204,10 +204,11 @@ src="https://www.facebook.com/tr?id=1708019822805724&ev=PageView&noscript=1"
                                     <div class="clear pad45"></div>
                                 </form>
                             </div>
-                            <div class="notification_ok" style="display:none">
-                            <p>
-                                Gracias por elegirnos, ya estamos trabajando en tu propuesta
-                            </p>
+                            <div style="display:none;" id="thankyou_message" class="notification_ok">
+                                 <p>Gracias por elegirnos, ya estamos trabajando en tu propuesta</p>
+                            </div>
+                            <div style="display:none;" id="email-invalid" class="notification_ok">
+                                <p>El email es inv&aacute;lido!</p>
                             </div>
                         </div>
                     </div>
@@ -278,50 +279,7 @@ src="https://www.facebook.com/tr?id=1708019822805724&ev=PageView&noscript=1"
 <script type="text/javascript" src="js/scripts.js"></script>
 <script src="js/retina.js"></script>
 <!-- Contact -->
-<script type="text/javascript">
-    $(document).ready(function() {
-
-        $('#ajax-contact-form').on('submit', function(e) {
-        e.preventDefault();
-
-        //get the name field value
-        var name = $('#name').val();
-        //get the name field value
-        var email = $('#email').val();
-        //get the comments
-        var phone = $('#phone').val();
-        //get the comments
-        var products = $('#products').val();
-        //get the comments
-        var message = $('#message').val();
-
-        //pretend we don't need validation
-
-        //send to formspree
-        $.ajax({
-            url:'https://formspree.io/info@spidpic.com',
-            method:'POST',
-            data:{
-            name:name,
-            email:email,
-            phone:phone,
-            products:products,
-            message:message,
-            _subject:'Spidpic Contact Form',
-            },
-            dataType:"json",
-            success:function() {
-            console.log('success'); 
-            $('#ajax-contact-form').hide();
-            $('.notification_ok').show();
-            }   
-
-        });     
-
-        });
-
-    });
-</script>
+<script type="text/javascript" src="js/contact_form_submission_handler.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
