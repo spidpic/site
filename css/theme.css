@@ -58,6 +58,7 @@ small { letter-spacing: 0.2em; font-size: 11px; }
 .pad45 { padding-top: 45px; }
 .pad30 { padding-top: 30px; }
 .pad10 { padding-top: 10px; }
+.pad5 { padding-top: 5px; }
 
 /* Margins */
 .marg-right5 { margin-right: 5px; }
@@ -85,14 +86,15 @@ a:hover { text-decoration: none; }
 }
 
 /**** TYPOGRAPHY ****/
-h1,h2,h3,h4,h5,h6 { font-weight: 300; letter-spacing: -0.25px; font-family: 'Lato', sans-serif;}
-h5 { font-weight: 400; letter-spacing: -0.25px; font-family: 'Lato', sans-serif;}
+h1,h2,h3,h4,h5 { font-weight: 300; letter-spacing: -0.25px; font-family: 'Lato', sans-serif;}
+h5,h6 { font-weight: 400; letter-spacing: -0.25px; font-family: 'Lato', sans-serif;}
+h2 { color:#405972; font-family: 'Lato', sans-serif;}
 h1 { font-size: 30px; line-height: 40px!important;  }
 h2 { font-size: 21px;  line-height: 30px!important; }
 h3 { font-size: 18px; line-height: 25px!important;  }
 h4 { font-size: 16px; line-height: 25px!important; margin-bottom: 10px; }
 h5 { font-size: 90px; line-height: 100px!important; margin-bottom: 10px; }
-h6 { font-size: 14px; line-height: 22px!important; margin-bottom: 10px; }
+h6 { font-size: 70px; line-height: 100px!important; margin-bottom: -30px; margin-top: -20px; }
 h7 { font-size: 40px; line-height: 50px!important;  }
 
 /*-----------------------------------------------------------------------------------*/
@@ -231,6 +233,7 @@ h7 { font-size: 40px; line-height: 50px!important;  }
     padding: 0px; 
     padding-bottom: 20px;
 }
+
 
 /***************************************************
 	CONTACT
